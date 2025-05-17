@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import logo from "./logo.svg";
+
 import "./App.css";
 
 function App() {
@@ -27,7 +27,6 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
         <h2>Translatitem</h2>
         <input
           type="text"
@@ -35,6 +34,11 @@ function App() {
           onChange={(e) => setInput(e.target.value)}
           placeholder="Enter text to translate"
           style={{ padding: 8, fontSize: 16, marginBottom: 12, width: 250 }}
+          onKeyDown={(e) => {
+            if (e.key === "Enter" && !loading && input) {
+              handleTranslate();
+            }
+          }}
         />
         <button
           onClick={handleTranslate}
