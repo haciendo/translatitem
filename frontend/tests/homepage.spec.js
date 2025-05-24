@@ -1,6 +1,9 @@
-import { test, expect } from "@playwright/test";
+import { test, expect, request } from "@playwright/test";
 
-test("homepage has React text", async ({ page }) => {
+test("homepage is loaded as expected", async ({ page }) => {
   await page.goto("/");
-  await expect(page.locator("body")).toContainText("Translatitem");
+  await expect(page.locator("h2")).toContainText("Translatitem");
+  await expect(page.locator("p")).toContainText(
+    "An application to translate your business"
+  );
 });

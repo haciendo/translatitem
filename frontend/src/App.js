@@ -28,6 +28,9 @@ function App() {
     <div className="App">
       <header className="App-header">
         <h2>Translatitem</h2>
+        <p style={{ marginTop: -10, marginBottom: 20, fontSize: "1rem" }}>
+          An application to translate your business
+        </p>
         <input
           type="text"
           value={input}
